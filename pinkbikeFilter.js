@@ -37,17 +37,19 @@ var tags = [''];
 /**** end of settings ****************************************/
 
 // hide articles by tags
-var articles = document.getElementById('news-container').getElementsByClassName('news-style1');
-for (var i=0;i < articles.length; i++){
-  var tagsInItem = articles[i].querySelectorAll('.pb-tag');
-  for (var ii=0;ii<tagsInArticle.length;ii++){
-      var tagUrl = tagsInArticle[ii].getAttribute("href");
-      for (var iii=0;iii<tags.length;iii++){
-         if ( tagUrl == 'https://www.pinkbike.com/news/tags/' + tags[iii]  + '/'){
-           articles[i].style.display = 'none';
-           break;
+if (articles = document.getElementById('news-container')){
+  articles = articles.getElementsByClassName('news-style1');
+  for (var i=0;i < articles.length; i++){
+    var tagsInArticle = articles[i].querySelectorAll('.pb-tag');
+    for (var ii=0;ii<tagsInArticle.length;ii++){
+        var tagUrl = tagsInArticle[ii].getAttribute("href");
+        for (var iii=0;iii<tags.length;iii++){
+           if ( tagUrl == 'https://www.pinkbike.com/news/tags/' + tags[iii]  + '/'){
+             articles[i].style.display = 'none';
+             break;
+          }
         }
-      }
+    }
   }
 }
 
