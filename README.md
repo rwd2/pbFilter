@@ -1,2 +1,2 @@
-# pbCommentFilter
-Greasemonkey script for filtering article comments by specific users on pinkbike.com
+# pbFilter
+Greasemonkey script for filtering  articles based on tags, and comments by specific users on pinkbike.com
