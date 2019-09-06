@@ -1,5 +1,5 @@
 // ==UserScript==
-// @name        Pinkbike Comment Filter
+// @name        Pinkbike comment and article filter
 // @namespace   Violentmonkey Scripts
 // @include     http://www.pinkbike.com/*
 // @include     https://www.pinkbike.com/*
@@ -21,11 +21,37 @@
 //
 var userUrls = [''];
 
-// toggle to block replies to commments by blocked users: true  for yes,  false for no.
+// toggle to hide replies to commments by blocked users: true  for yes,  false for no.
 var filterReplies = true;
+
+// Configure articles  to block
+//
+// If you want to hide front-page articles which have a tag that links to urls
+// 'https://www.pinkbike.com/news/tags/emtb/' or 'https://www.pinkbike.com/news/tags/xc-racing' , 
+// then use:
+//  
+//     var newsTags = ['emtb','xc-racing'];
+//
+var tags = [''];
 
 /**** end of settings ****************************************/
 
+// hide articles by tags
+var articles = document.getElementById('news-container').getElementsByClassName('news-style1');
+for (var i=0;i < articles.length; i++){
+  var tagsInItem = articles[i].querySelectorAll('.pb-tag');
+  for (var ii=0;ii<tagsInArticle.length;ii++){
+      var tagUrl = tagsInArticle[ii].getAttribute("href");
+      for (var iii=0;iii<tags.length;iii++){
+         if ( tagUrl == 'https://www.pinkbike.com/news/tags/' + tags[iii]  + '/'){
+           articles[i].style.display = 'none';
+           break;
+        }
+      }
+  }
+}
+
+// hide article-comments by username
 var collPpcont = document.querySelectorAll('.ppcont');
 for(var i=0;i<collPpcont.length;i++){
   var collCmcont = collPpcont[i].querySelectorAll('.cmcont');
@@ -43,7 +69,12 @@ for(var i=0;i<collPpcont.length;i++){
           }
         }
       }catch(err) {
-        console.log('uh-oh'); //err.message;
+        console.log(err.message);
       }
   }
 }
+
+
+
+
+
