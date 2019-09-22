@@ -30,7 +30,7 @@ var filterReplies = true;
 // 'https://www.pinkbike.com/news/tags/emtb/' or 'https://www.pinkbike.com/news/tags/xc-racing' , 
 // then use:
 //  
-//     var newsTags = ['emtb','xc-racing'];
+//     var tags = ['emtb','xc-racing'];
 //
 var tags = [''];
 
