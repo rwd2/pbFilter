@@ -3,7 +3,7 @@
 // @namespace   Violentmonkey Scripts
 // @include     http://www.pinkbike.com/*
 // @include     https://www.pinkbike.com/*
-// @version     1.0
+// @version     1.1
 // ==/UserScript==
 
 /*** start of settings ***************************************/
@@ -12,14 +12,14 @@
 //  Suppose a user 'Billy Bob' has profile url "https://www.pinkbike.com/u/billybob/"
 //  then use:
 //
-//  	var userUrls = ['billybob'];
+//  	var userNames = ['billybob'];
 //
 //  If you want to block a user with url "https://www.pinkbike.com/u/johnny3000/" too
 //  then use:
 //
-//      var userUrls = ['billybob','johnny3000'];
+//      var userNames = ['billybob','johnny3000'];
 //
-var userUrls = [''];
+var userNames = [''];
 
 // toggle to hide replies to commments by blocked users: true  for yes,  false for no.
 var filterReplies = true;
@@ -54,29 +54,36 @@ if (articles = document.getElementById('news-container')){
 }
 
 // hide article-comments by username
+
+var arrRegexpAtUserName = [];
+for (var i=0;i<userNames.length;i++){
+  arrRegexpAtUserName[i]= new RegExp('\@'+userNames[i], 'g');
+  i++;
+ 
+}
+
 var collPpcont = document.querySelectorAll('.ppcont');
 for(var i=0;i<collPpcont.length;i++){
   var collCmcont = collPpcont[i].querySelectorAll('.cmcont');
   for(var ii=0;ii<collCmcont.length;ii++){
       try{
-        var div = collCmcont[ii].children[2];
-        var userUrl = div.getElementsByTagName('a')[0].getAttribute("href");
-        for (var iii=0;iii<userUrls.length;iii++){
-           if (userUrl == 'https://www.pinkbike.com/u/' + userUrls[iii] + '/'){
-             div.style.display = 'none';
-             if(filterReplies === true && ii==0){
-                   collPpcont[i].style.display = 'none';
-             }
-             break;
-          }
-        }
+        var atUserName = collCmcont[ii].querySelectorAll('.comtext')[0].innerText;
+        var userUrl = collCmcont[ii].children[2].getElementsByTagName('a')[0].getAttribute("href");
       }catch(err) {
         console.log(err.message);
       }
-  }
+      for (var iii=0;iii<userNames.length;iii++){
+          if  (userUrl && userUrl == 'https://www.pinkbike.com/u/' + userNames[iii] + '/'){
+               collCmcont[ii].style.display = 'none';
+               if(filterReplies === true && ii==0){
+                   collPpcont[i].style.display = 'none';
+               }
+               break;            
+          }
+          if ( atUserName && filterReplies === true && atUserName.match(arrRegexpAtUserName[iii])){
+             collCmcont[ii].style.display = 'none';
+             break
+          }
+      }
+    }
 }
-
-
-
-
-
