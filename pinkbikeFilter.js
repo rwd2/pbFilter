@@ -72,7 +72,6 @@ for(i=0;i<collPpcont.length;i++){
       try{
         atUserName = collCmcont[ii].querySelectorAll('.comtext')[0].innerText; 
         userUrl = collCmcont[ii].getElementsByTagName('a')[1].getAttribute("href");
-        console.log('vm userUrl  ' +userUrl )
       }catch(err) {  
         console.log(err.message);
       }
@@ -86,7 +85,7 @@ for(i=0;i<collPpcont.length;i++){
           }
           if ( atUserName && filterReplies  && atUserName.match(arrRegexpAtUserName[iii])){
              collCmcont[ii].style.display = 'none';
-             break
+             break;
           }
       }
     }
