@@ -9,4 +9,6 @@ To use it you need to:
 
 3) choose either 'url' and use  https://raw.githubusercontent.com/rwd2/pbCommentFilter/master/pinkbikeFilter.js, or create new script and paste te contents of pinkbikeFilter.js in it.
 
+3) edit the usernames and tags in the script that you want to filter out
+
 4) visit pinkbike.com to see it in action
