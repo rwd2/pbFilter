@@ -35,7 +35,6 @@ var filterReplies = true;
 var tags = [''];
 
 /**** end of settings ****************************************/
-
 var i = 0;
 var ii = 0;
 var iii = 0;
@@ -63,10 +62,7 @@ if (articles = document.getElementById('news-container')){
 var arrRegexpAtUserName = [];
 for (i=0;i<userNames.length;i++){
   arrRegexpAtUserName[i]= new RegExp('\@'+userNames[i], 'g');
-  i++;
-
 }
-
 
 var atUserName, userUrl;
 var collPpcont = document.querySelectorAll('.ppcont');
@@ -74,20 +70,21 @@ for(i=0;i<collPpcont.length;i++){
   var collCmcont = collPpcont[i].querySelectorAll('.cmcont');
   for( ii=0;ii<collCmcont.length;ii++){
       try{
-        atUserName = collCmcont[ii].querySelectorAll('.comtext')[0].innerText;
-        userUrl = collCmcont[ii].children[2].getElementsByTagName('a')[0].getAttribute("href");
-      }catch(err) {
+        atUserName = collCmcont[ii].querySelectorAll('.comtext')[0].innerText; 
+        userUrl = collCmcont[ii].getElementsByTagName('a')[1].getAttribute("href");
+        console.log('vm userUrl  ' +userUrl )
+      }catch(err) {  
         console.log(err.message);
       }
       for ( iii=0;iii<userNames.length;iii++){
-          if (userUrl && userUrl == 'https://www.pinkbike.com/u/' + userNames[iii] + '/'){
-               collCmcont[ii].style.display = 'none';
-               if(filterReplies === true && ii==0){
+          if (userUrl && userUrl == 'https://www.pinkbike.com/u/' + userNames[iii] + '/'){                  
+             collCmcont[ii].style.display = 'none';
+               if(filterReplies === true && ii==0){               
                    collPpcont[i].style.display = 'none';
                }
                break;
           }
-          if ( atUserName && filterReplies === true && atUserName.match(arrRegexpAtUserName[iii])){
+          if ( atUserName && filterReplies  && atUserName.match(arrRegexpAtUserName[iii])){
              collCmcont[ii].style.display = 'none';
              break
           }
