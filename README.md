@@ -3,9 +3,9 @@ Greasemonkey script for filtering articles based on tags, and comments by specif
 
 To use it you need to:
 
-1) install a browser extension that can run Greasemonkey scripts. So for Firefox for example Greasemonkey or Violentmonkey. And for Chrome Tampermonkey.
+1) install a browser extension that can run Greasemonkey scripts. So Greasemonkey or Violentmonkey for Firefox, and Tampermonkey for Chrome.
 
-2) in the extenion settings press 'new' to add a script
+2) in the extension settings press 'new' to add a script
 
 3) choose either 'url' and use  https://raw.githubusercontent.com/rwd2/pbCommentFilter/master/pinkbikeFilter.js, or create new script and paste te contents of pinkbikeFilter.js in it.
 
