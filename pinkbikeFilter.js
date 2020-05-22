@@ -9,10 +9,10 @@
 /*** start of settings ***************************************/
 
 //  Configure the users to block.
-//  Suppose a user 'Billy Bob' has profile url "https://www.pinkbike.com/u/billybob/"
+//  Suppose a user 'Billy Bob' has profile url "https://www.pinkbike.com/u/BillyBob/"
 //  then use:
 //
-//  	var userNames = ['billybob'];
+//  	var userNames = ['BillyBob'];
 //
 //  If you want to block a user with url "https://www.pinkbike.com/u/johnny3000/" too
 //  then use:
