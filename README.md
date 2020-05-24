@@ -1,5 +1,10 @@
 # pbCommentFilter
-Greasemonkey script for filtering articles based on tags, and comments by specific users on pinkbike.com, without the need to be logged in.
+Greasemonkey script for the website pinkbike.com that does the following:
+
+- filter out front-page news articles based on any tags you choose, not just the ones that can be set in the user profile
+- filter out article comments by specific users
+
+Both work without the need to be logged in.
 
 To use it you need to:
 
