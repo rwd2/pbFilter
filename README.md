@@ -1,5 +1,5 @@
-# pbCommentFilter
-Greasemonkey script for the website pinkbike.com that does the following:
+# pbFilter
+PbFilter is script you can run in your webbrowser to filter out certain contents of the website pinkbike.com:
 
 - filter out front-page news articles based on any tags you choose, not just the ones that can be set in the user profile
 - filter out article comments by specific users
@@ -12,7 +12,7 @@ To use it you need to:
 
 2) in the extension settings press 'new' to add a script
 
-3) choose either 'url' and use  https://raw.githubusercontent.com/rwd2/pbCommentFilter/master/pinkbikeFilter.js, or create new script and paste te contents of pinkbikeFilter.js in it.
+3) choose either 'url' and use  https://raw.githubusercontent.com/rwd2/pbCommentFilter/master/pbFilter.js, or create new script and paste te contents of pbFilter.js in it.
 
 3) edit the usernames and tags in the script that you want to filter out
 
