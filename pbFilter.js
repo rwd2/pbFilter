@@ -17,7 +17,7 @@
 //  If you want to block a user with url "https://www.pinkbike.com/u/johnny3000/" too
 //  then use:
 //
-//      var userNames = ['billybob','johnny3000'];
+//      var userNames = ['BillyBob','johnny3000'];
 //
 var userNames = [''];
 
