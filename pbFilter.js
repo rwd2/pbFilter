@@ -37,7 +37,13 @@ var filterReplies = true;
 //
 var tags = [''];
 
+// when set to 'true' don't filter anything but show which articles and comments would be filtered.
+var testmode = false;
+
+// greasemonkey  examples http://hayageek.com/greasemonkey-tutorial/
+
 /**** end of settings ****************************************/
+
 var i = 0;
 var ii = 0;
 var iii = 0;
@@ -52,13 +58,19 @@ if (articles = document.getElementById('news-container')){
         tagUrl = tagsInArticle[ii].getAttribute("href");
         for ( iii=0;iii<tags.length;iii++){
            if ( tagUrl == 'https://www.pinkbike.com/news/tags/' + tags[iii] + '/'){
-             articles[i].style.display = 'none';
+             if (testmode === true){
+                articles[i].style.border = '2px solid red';
+             }else{
+                 articles[i].style.display = 'none';
+             }
+             console.log (tagUrl);
              break;
           }
         }
     }
   }
 }
+
 
 // hide article-comments by username
 var arrRegexpAtUserName = [];
@@ -69,25 +81,38 @@ for (i=0;i<userNames.length;i++){
 var atUserName, userUrl;
 var collPpcont = document.querySelectorAll('.ppcont');
 for(i=0;i<collPpcont.length;i++){
-  var collCmcont = collPpcont[i].querySelectorAll('.cmcont');
+  var collCmcont = collPpcont[i].querySelectorAll('.cmcont');                  
   for( ii=0;ii<collCmcont.length;ii++){
       try{
         atUserName = collCmcont[ii].querySelectorAll('.comtext')[0].innerText; 
         userUrl = collCmcont[ii].getElementsByTagName('a')[1].getAttribute("href");
+        //console.log('vm userUrl  ' +userUrl )
       }catch(err) {  
         console.log(err.message);
       }
       for ( iii=0;iii<userNames.length;iii++){
-          if (userUrl && userUrl == 'https://www.pinkbike.com/u/' + userNames[iii] + '/'){                  
-             collCmcont[ii].style.display = 'none';
-               if(filterReplies === true && ii==0){               
-                   collPpcont[i].style.display = 'none';
+          if (userUrl && userUrl == 'https://www.pinkbike.com/u/' + userNames[iii] + '/'){  
+              if (testmode === true){
+                  collCmcont[ii].style.border = '2px solid red';
+              }else{
+                  collCmcont[ii].style.display = 'none';
+              }
+               if(filterReplies === true && ii==0){
+                  if (testmode === true){
+                      collPpcont[i].style.border = '2px solid red';
+                  }else{
+                      collPpcont[i].style.display = 'none';
+                  }
                }
                break;
           }
           if ( atUserName && filterReplies  && atUserName.match(arrRegexpAtUserName[iii])){
-             collCmcont[ii].style.display = 'none';
-             break;
+            if (testmode == true){
+                collCmcont[ii].style.border = '2px solid red';   
+            }else{
+                collCmcont[ii].style.display = 'none';
+            }
+             break
           }
       }
     }
