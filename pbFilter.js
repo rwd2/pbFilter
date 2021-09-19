@@ -49,6 +49,13 @@ var ii = 0;
 var iii = 0;
 var articles, tagsInArticle, tagUrl;
 
+function hideElement(domElement){
+    domElement.style.display = 'none';   
+}
+function markElement(domElement){
+    domElement.style.border = '2px solid red';   
+}
+
 // hide articles by tags
 if (articles = document.getElementById('news-container')){
   articles = articles.getElementsByClassName('news-style1');
@@ -59,9 +66,9 @@ if (articles = document.getElementById('news-container')){
         for ( iii=0;iii<tags.length;iii++){
            if ( tagUrl == 'https://www.pinkbike.com/news/tags/' + tags[iii] + '/'){
              if (testmode === true){
-                articles[i].style.border = '2px solid red';
+                markElement(articles[i]);
              }else{
-                 articles[i].style.display = 'none';
+                hideElement(articles[i]);
              }
              console.log (tagUrl);
              break;
@@ -70,7 +77,6 @@ if (articles = document.getElementById('news-container')){
     }
   }
 }
-
 
 // hide article-comments by username
 var arrRegexpAtUserName = [];
@@ -93,27 +99,28 @@ for(i=0;i<collPpcont.length;i++){
       for ( iii=0;iii<userNames.length;iii++){
           if (userUrl && userUrl == 'https://www.pinkbike.com/u/' + userNames[iii] + '/'){  
               if (testmode === true){
-                  collCmcont[ii].style.border = '2px solid red';
+                  markElement(collCmcont[ii]);
               }else{
-                  collCmcont[ii].style.display = 'none';
+                  hideElement(collCmcont[ii]);
               }
                if(filterReplies === true && ii==0){
                   if (testmode === true){
-                      collPpcont[i].style.border = '2px solid red';
+                      markElement(collPpcont[i]);
                   }else{
-                      collPpcont[i].style.display = 'none';
+                      hideElement(collPpcont[i]);
                   }
                }
                break;
           }
           if ( atUserName && filterReplies  && atUserName.match(arrRegexpAtUserName[iii])){
             if (testmode == true){
-                collCmcont[ii].style.border = '2px solid red';   
+                markElement(collCmcont[ii]);
             }else{
-                collCmcont[ii].style.display = 'none';
+                hideElement(collCmcont[ii]);
             }
              break
           }
       }
     }
 }
+
