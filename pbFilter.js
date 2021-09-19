@@ -9,15 +9,18 @@
 /*** start of settings ***************************************/
 
 //  Configure the users to block.
+//
+//  Add the tags you want to block by putting them in single quotes, seperated by a comma.
+//
 //  Suppose a user 'Billy Bob' has profile url "https://www.pinkbike.com/u/BillyBob/"
 //  then use:
 //
 //  	var userNames = ['BillyBob'];
 //
-//  If you want to block a user with url "https://www.pinkbike.com/u/johnny3000/" too
-//  then use:
+//  When want to block users with url "https://www.pinkbike.com/u/johnny3000/" and 
+//  "https://www.pinkbike.com/u/mtbderp/" too, then use:
 //
-//      var userNames = ['BillyBob','johnny3000'];
+//      var userNames = ['BillyBob','johnny3000','mtbderp'];
 //
 var userNames = [''];
 
@@ -27,7 +30,7 @@ var filterReplies = true;
 // Configure articles  to block
 //
 // If you want to hide front-page articles which have a tag that links to urls
-// 'https://www.pinkbike.com/news/tags/emtb/' or 'https://www.pinkbike.com/news/tags/xc-racing' ,
+// 'https://www.pinkbike.com/news/tags/emtb/' or 'https://www.pinkbike.com/news/tags/xc-racing/' ,
 // then use:
 //
 //     var tags = ['emtb','xc-racing'];
@@ -58,7 +61,6 @@ if (articles = document.getElementById('news-container')){
 }
 
 // hide article-comments by username
-
 var arrRegexpAtUserName = [];
 for (i=0;i<userNames.length;i++){
   arrRegexpAtUserName[i]= new RegExp('\@'+userNames[i], 'g');
