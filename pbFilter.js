@@ -50,10 +50,11 @@ var iii = 0;
 var articles, tagsInArticle, tagUrl;
 
 function hideElement(domElement){
-    domElement.style.display = 'none';   
-}
-function markElement(domElement){
-    domElement.style.border = '2px solid red';   
+   if (testmode === true){
+      domElement.style.border = '2px solid red';
+   }else{
+      domElement.style.display = 'none';   
+   }
 }
 
 // hide articles by tags
@@ -65,11 +66,7 @@ if (articles = document.getElementById('news-container')){
         tagUrl = tagsInArticle[ii].getAttribute("href");
         for ( iii=0;iii<tags.length;iii++){
            if ( tagUrl == 'https://www.pinkbike.com/news/tags/' + tags[iii] + '/'){
-             if (testmode === true){
-                markElement(articles[i]);
-             }else{
-                hideElement(articles[i]);
-             }
+             hideElement(articles[i]);
              console.log (tagUrl);
              break;
           }
@@ -98,26 +95,14 @@ for(i=0;i<collPpcont.length;i++){
       }
       for ( iii=0;iii<userNames.length;iii++){
           if (userUrl && userUrl == 'https://www.pinkbike.com/u/' + userNames[iii] + '/'){  
-              if (testmode === true){
-                  markElement(collCmcont[ii]);
-              }else{
-                  hideElement(collCmcont[ii]);
-              }
+              hideElement(collCmcont[ii]);
                if(filterReplies === true && ii==0){
-                  if (testmode === true){
-                      markElement(collPpcont[i]);
-                  }else{
-                      hideElement(collPpcont[i]);
-                  }
+                  hideElement(collPpcont[i]);
                }
                break;
           }
           if ( atUserName && filterReplies  && atUserName.match(arrRegexpAtUserName[iii])){
-            if (testmode == true){
-                markElement(collCmcont[ii]);
-            }else{
-                hideElement(collCmcont[ii]);
-            }
+              hideElement(collCmcont[ii]);
              break
           }
       }
