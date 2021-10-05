@@ -1,14 +1,14 @@
 # pbFilter
-PbFilter is script you can run in your webbrowser to filter out certain contents of the website pinkbike.com:
+PbFilter is a script you can run in your webbrowser to filter out certain content of the website pinkbike.com:
 
-- filter out front-page news articles based on any tags you choose, not just the ones that can be set in the user profile
-- filter out article comments by specific users
+- front-page articles based on any tags
+- article comments by specific users
 
 Both work without the need to be logged in.
 
 To use it you need to:
 
-1) install a browser extension that can run Greasemonkey scripts. So Greasemonkey or Violentmonkey for Firefox, and Tampermonkey for Chrome.
+1) install a browser extension that can run Greasemonkey scripts. such as Greasemonkey or Violentmonkey for Firefox, or Tampermonkey for Chrome.
 
 2) in the extension settings press 'new' to add a script
 
