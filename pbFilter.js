@@ -8,9 +8,11 @@
 
 /*** start of settings ***************************************/
 
-//  Configure the users to block.
+//  Configure which users to block.
 //
-//  Add the tags you want to block by putting them in single quotes, seperated by a comma.
+//  Add the unsernames you want to block by enclosing them in single quotes, seperated by a comma.
+//
+//  -- Example -- 
 //
 //  Suppose a user 'Billy Bob' has profile url "https://www.pinkbike.com/u/BillyBob/"
 //  then use:
@@ -27,20 +29,22 @@ var userNames = [''];
 // toggle to hide replies to commments by blocked users: true  for yes,  false for no.
 var filterReplies = true;
 
-// Configure articles  to block
+// Configure which articles to block.
+//
+//  Add the tags you want to block by enclosing them in single quotes, seperated by a comma.
+//
+// -- Example -- 
 //
 // If you want to hide front-page articles which have a tag that links to urls
-// 'https://www.pinkbike.com/news/tags/emtb/' or 'https://www.pinkbike.com/news/tags/xc-racing/' ,
+// 'https://www.pinkbike.com/news/tags/emtb/' and/or 'https://www.pinkbike.com/news/tags/contests-and-deals/' ,
 // then use:
 //
-//     var tags = ['emtb','xc-racing'];
+//     var tags = ['emtb','contests-and-deals'];
 //
 var tags = [''];
 
-// when set to 'true' don't filter anything but show which articles and comments would be filtered.
+// when set to 'true' don't filter anything but show a red outline around articles and comments that would be filtered.
 var testmode = false;
-
-// greasemonkey  examples http://hayageek.com/greasemonkey-tutorial/
 
 /**** end of settings ****************************************/
 
