@@ -12,7 +12,7 @@ To use it you need to:
 
 2) in the extension settings press 'new' to add a script
 
-3) choose either 'url' and use  https://raw.githubusercontent.com/rwd2/pbCommentFilter/master/pbFilter.js, or create new script and paste te contents of pbFilter.js in it.
+3) choose either 'url' and use  https://raw.githubusercontent.com/rwd2/pbCommentFilter/master/pbFilter.js, or create new script and paste the contents of pbFilter.js in it.
 
 3) edit the usernames and tags in the script that you want to filter out
 
