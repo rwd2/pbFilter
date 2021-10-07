@@ -10,7 +10,7 @@
 
 //  Configure which users to block.
 //
-//  Add the unsernames you want to block by enclosing them in single quotes, seperated by a comma.
+//  Add the unsernames you want to block by enclosing them in single quotes, separated by a comma.
 //
 //  -- Example -- 
 //
@@ -31,7 +31,7 @@ var filterReplies = true;
 
 // Configure which articles to block.
 //
-//  Add the tags you want to block by enclosing them in single quotes, seperated by a comma.
+//  Add the tags you want to block by enclosing them in single quotes, separated by a comma.
 //
 // -- Example -- 
 //
