@@ -4,7 +4,7 @@ PbFilter is a script you can run in your webbrowser to filter out certain conten
 - front-page articles based on any tags
 - article comments by specific users
 
-Both work without the need to be logged in.
+It does not require an account at pinkbike.com.
 
 To use it you need to:
 
