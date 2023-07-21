@@ -1,19 +1,16 @@
 # pbFilter
-PbFilter is a script you can run in your webbrowser to filter out certain content of the website pinkbike.com:
 
-- front-page articles based on any tags
-- article comments by specific users
+PbFilter is a script for Greasemonkey compatible browser extensions. On pinkbike.com it filters out
 
-It does not require an account at pinkbike.com.
+- Front-page articles with specific tags
+- Article comments by specific users
 
-To use it you need to:
+How to use:
 
-1) install a browser extension that can run Greasemonkey scripts. such as Greasemonkey or Violentmonkey for Firefox, or Tampermonkey for Chrome.
+1) Install the Greasemonkey browser extension, or a Greasemonkey compatible browser extension such as Violentmonkey for Firefox, or Tampermonkey for Chrome.
 
-2) in the extension settings press 'new' to add a script
+2) Add the script in the extension settings by either adding the url https://raw.githubusercontent.com/rwd2/pbCommentFilter/master/pbFilter.js, or by creating a new script and pasting the contents of pbFilter.js in it.
 
-3) choose either 'url' and use  https://raw.githubusercontent.com/rwd2/pbCommentFilter/master/pbFilter.js, or create new script and paste the contents of pbFilter.js in it.
+3) Edit the tags and usernames in the script that you want to filter out.
 
-3) edit the usernames and tags in the script that you want to filter out
-
-4) visit pinkbike.com to see it in action
+4) Visit pinkbike.com to see it in action. No account at pinkbike.com is needed.
